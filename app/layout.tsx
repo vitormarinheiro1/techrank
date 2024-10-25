@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/header";
 import { Open_Sans } from "next/font/google";
-
+import Footer from "./components/footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,10 +22,9 @@ export const metadata: Metadata = {
 };
 
 const sans = Open_Sans({
-  weight: '400',
-  subsets: ['latin'],
-})
-
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function RootLayout({
   children,
@@ -34,11 +33,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={sans.className}
-      >
+      <body className={sans.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
